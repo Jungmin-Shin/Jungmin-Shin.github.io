@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Jungmin Shin — financial statistics, data analysis, and network-based research." />
+    <title>Jungmin Shin · Financial Statistics & Data Research</title>
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230a1c36'/%3E%3Cpath d='M16 45V19h8v19c0 5 2.5 7.5 7.2 7.5 4.5 0 7.1-2.5 7.1-7.5V19h8v20.5C46.3 50.4 40.2 56 31.2 56 22.1 56 16 50.4 16 39.5Z' fill='%236bd8ff'/%3E%3C/svg%3E" />
+    <style>
+      :root { --ink:#10213d; --muted:#60708a; --blue:#1769e0; --cyan:#6bd8ff; --paper:#f7faff; --line:#d8e2f0; --card:#fff; }
+      * { box-sizing:border-box; }
+      html { scroll-behavior:smooth; }
+      body { margin:0; color:var(--ink); background:var(--paper); font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height:1.55; }
+      a { color:inherit; }
+      .shell { width:min(1120px, calc(100% - 40px)); margin:auto; }
+      .top { background:var(--ink); color:#f7fbff; min-height:580px; position:relative; overflow:hidden; }
+      .top:after { content:""; position:absolute; width:680px; height:680px; border:1px solid rgba(107,216,255,.18); border-radius:50%; right:-255px; top:-250px; box-shadow:0 0 0 72px rgba(107,216,255,.035), 0 0 0 145px rgba(107,216,255,.025); }
+      nav { height:78px; display:flex; align-items:center; justify-content:space-between; position:relative; z-index:1; }
+      .brand { text-decoration:none; font-weight:800; letter-spacing:-.03em; font-size:1.1rem; }
+      .brand i { font-style:normal; color:var(--cyan); }
+      .navlinks { display:flex; gap:24px; font-size:.86rem; }
+      .navlinks a { color:#d3e2f7; text-decoration:none; }
+      .navlinks a:hover { color:white; }
+      .hero { padding:64px 0 76px; position:relative; z-index:1; max-width:1050px; display:grid; grid-template-columns:minmax(0, 1fr) 280px; gap:56px; align-items:center; }
+      .eyebrow { color:var(--cyan); font-size:.8rem; font-weight:800; text-transform:uppercase; letter-spacing:.13em; margin:0 0 20px; }
+      h1 { letter-spacing:-.065em; font-size:clamp(3.25rem, 8vw, 6.7rem); line-height:.94; margin:0; max-width:740px; }
+      .lede { font-size:clamp(1.05rem, 2vw, 1.32rem); color:#d0dced; margin:30px 0 33px; max-width:640px; }
+      .cta { display:inline-flex; text-decoration:none; background:var(--cyan); color:#062141; font-weight:800; border-radius:999px; padding:13px 20px; }
+      .cta:hover { background:white; }
+      .portrait { margin:0; width:100%; }
+      .portrait img { display:block; width:100%; aspect-ratio: .72; object-fit:cover; object-position:center 31%; border-radius:18px; border:1px solid rgba(107,216,255,.48); box-shadow:18px 18px 0 rgba(107,216,255,.14); }
+      main { padding:84px 0 58px; }
+      section { margin-bottom:94px; scroll-margin-top:26px; }
+      .section-mark { font-size:.77rem; letter-spacing:.12em; text-transform:uppercase; color:var(--blue); font-weight:850; margin-bottom:11px; }
+      h2 { margin:0 0 26px; font-size:clamp(1.8rem, 3vw, 2.65rem); line-height:1.05; letter-spacing:-.045em; }
+      .intro { max-width:780px; font-size:1.12rem; color:#344762; }
+      .grid { display:grid; grid-template-columns:repeat(12, 1fr); gap:18px; }
+      .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:25px; }
+      .focus { grid-column:span 4; min-height:188px; }
+      .focus b { display:block; font-size:1.07rem; margin-bottom:9px; }
+      .focus p, .card p { color:var(--muted); font-size:.94rem; margin:0; }
+      .timeline { display:grid; gap:12px; }
+      .entry { display:grid; grid-template-columns:160px 1fr; gap:28px; padding:25px 0; border-top:1px solid var(--line); }
+      .entry:last-child { border-bottom:1px solid var(--line); }
+      .date { color:var(--blue); font-weight:750; font-size:.88rem; }
+      h3 { font-size:1.1rem; line-height:1.25; margin:0 0 5px; letter-spacing:-.02em; }
+      .org { margin:0 0 10px; color:var(--muted); font-size:.94rem; }
+      .detail { margin:0; color:#40516a; }
+      .research { grid-column:span 6; min-height:305px; display:flex; flex-direction:column; }
+      .tag { color:var(--blue); font-size:.75rem; font-weight:800; letter-spacing:.1em; text-transform:uppercase; margin-bottom:16px; }
+      .research h3 { font-size:1.32rem; margin-bottom:13px; }
+      .tools { margin-top:auto; padding-top:18px; color:var(--blue); font-size:.84rem; font-weight:700; }
+      .two-col { display:grid; grid-template-columns:1fr 1fr; gap:62px; }
+      .list { list-style:none; padding:0; margin:0; }
+      .list li { padding:16px 0; border-top:1px solid var(--line); }
+      .list li:last-child { border-bottom:1px solid var(--line); }
+      .list strong { display:block; font-size:.96rem; }
+      .list span { font-size:.9rem; color:var(--muted); }
+      .skillset { background:var(--ink); color:white; border-radius:18px; padding:34px; }
+      .skillset h2 { margin-bottom:21px; }
+      .skillset .section-mark { color:var(--cyan); }
+      .pills { display:flex; flex-wrap:wrap; gap:9px; }
+      .pill { border:1px solid rgba(255,255,255,.28); color:#e7f1ff; padding:8px 11px; border-radius:999px; font-size:.88rem; }
+      .contact { border-top:1px solid var(--line); padding-top:70px; text-align:center; }
+      .contact h2 { margin-bottom:13px; }
+      .contact p { color:var(--muted); margin:0 0 20px; }
+      .email { color:var(--blue); font-size:clamp(1.1rem, 3vw, 1.6rem); font-weight:800; text-underline-offset:5px; }
+      footer { color:#70809a; font-size:.82rem; padding:28px 0 40px; }
+      @media (max-width:720px) { .shell { width:min(100% - 32px, 1120px); } .navlinks { gap:13px; font-size:.75rem; } .hero { padding:55px 0 80px; grid-template-columns:1fr; gap:34px; } .portrait { width:min(270px, 78vw); } main { padding-top:62px; } section { margin-bottom:66px; } .focus, .research { grid-column:span 12; } .entry { grid-template-columns:1fr; gap:7px; } .two-col { grid-template-columns:1fr; gap:52px; } .top { min-height:520px; } }
+    </style>
+  </head>
+  <body>
+    <header class="top">
+      <div class="shell">
+        <nav aria-label="Primary navigation">
+          <a class="brand" href="#top">Jungmin <i>Shin</i></a>
+          <div class="navlinks"><a href="#research">Research</a><a href="#experience">Experience</a><a href="#recognition">Recognition</a><a href="#contact">Contact</a></div>
+        </nav>
+        <div class="hero" id="top">
+          <div>
+            <p class="eyebrow">MSc Financial Statistics · Financial risk</p>
+            <h1>Making financial risk visible through data.</h1>
+            <p class="lede">I am Jungmin Shin, an MSc Financial Statistics student at LSE interested in financial risk, systemic risk, and the structures that shape markets. My work brings together mathematical modelling, statistical analysis, and data research.</p>
+            <a class="cta" href="#research">Explore my work</a>
+          </div>
+          <figure class="portrait"><img src="jungmin-shin-profile.jpeg" alt="Portrait of Jungmin Shin in front of Tower Bridge at night" /></figure>
+        </div>
+      </div>
+    </header>
+    <main class="shell">
+      <section aria-labelledby="about-title">
+        <p class="section-mark">Profile</p>
+        <h2 id="about-title">Analytical research with a financial lens.</h2>
+        <p class="intro">I am an MSc Financial Statistics student at the London School of Economics and Political Science with a strong interest in financial risk. I use mathematical modelling, statistical analysis, and data-driven methods to study how risk propagates through interconnected markets and financial systems.</p>
+        <div class="grid" style="margin-top:31px">
+          <article class="card focus"><b>Mathematics & data engineering</b><p>BSc, Kyungpook National University · GPA 4.17/4.5</p></article>
+          <article class="card focus"><b>Financial statistics</b><p>MSc, London School of Economics and Political Science · 2026–2027</p></article>
+          <article class="card focus"><b>Applied research</b><p>Experience spanning financial networks, asset relationships, and image-based phenotyping.</p></article>
+        </div>
+      </section>
+      <section id="research" aria-labelledby="research-title">
+        <p class="section-mark">Selected research</p>
+        <h2 id="research-title">Questions I have investigated.</h2>
+        <div class="grid">
+          <article class="card research"><p class="tag">Financial networks</p><h3>Financial Mathematical Model Based on Network Entropy</h3><p>Built international ETF networks with the Diebold–Yilmaz Spillover Index and measured systemic complexity using von Neumann entropy. The resulting entropy–spillover framework examines how network centralisation changes during periods of stress.</p><p class="tools">R · Python · Network analysis</p></article>
+          <article class="card research"><p class="tag">Multi-asset structure</p><h3>Structural Clustering of Correlation Matrices</h3><p>Analysed 28 asset-class correlation matrices to understand cryptocurrency’s position in a multi-asset universe. Applied spectral clustering, k-medoids, Louvain modularity optimisation, and the Quotient Affine-invariant Metric.</p><p class="tools">MATLAB · Spectral clustering · QAM</p></article>
+          <article class="card research"><p class="tag">Applied data science</p><h3>Crop Phenotypic Data Standardisation</h3><p>Used RGB ratio analysis and piecewise regression on 102 rice cultivars to identify growth stages from red–green channel dynamics, contributing to a peer-reviewed study and trait-clustering analysis.</p><p class="tools">Python · MATLAB · Image-based phenotyping</p></article>
+          <article class="card research"><p class="tag">Publication</p><h3>Mathematical modelling with RGB data for rice lineages</h3><p>Co-authored research on comparative analysis of rice lineages and the distribution of breaking points, published in <em>BMC Plant Biology</em> (2026).</p><p class="tools"><a href="https://doi.org/10.1186/s12870-026-09470-1" target="_blank" rel="noopener">Read the publication ↗</a></p></article>
+        </div>
+      </section>
+      <section id="experience" aria-labelledby="experience-title">
+        <p class="section-mark">Experience</p>
+        <h2 id="experience-title">From analysis to application.</h2>
+        <div class="timeline">
+          <article class="entry"><div class="date">Apr–Jun 2026</div><div><h3>Risk Consultant</h3><p class="org">FB · Contract position · Seoul, South Korea</p><p class="detail">Contributed to a credit-scoring model development project for a guarantee insurance provider as part of a consulting team.</p></div></article>
+          <article class="entry"><div class="date">Jan–Mar 2026</div><div><h3>Data Analyst Trainee</h3><p class="org">iM Bank · iM Digital Banker Academy</p><p class="detail">Completed a corporate data-analyst training programme at iM Bank.</p></div></article>
+          <article class="entry"><div class="date">Jan 2024–Aug 2025</div><div><h3>Undergraduate Researcher</h3><p class="org">Data Analysis Lab · Kyungpook National University</p><p class="detail">Worked on correlation-matrix clustering, image-based phenotyping, and quantitative research projects across finance and biological data.</p></div></article>
+          <article class="entry"><div class="date">Jun 2024–Jan 2025</div><div><h3>Research Intern</h3><p class="org">College of Natural Sciences · Kyungpook National University</p><p class="detail">Selected through a competitive research-proposal process to develop an entropy-based model of systemic financial risk.</p></div></article>
+        </div>
+      </section>
+      <section id="recognition" class="two-col" aria-label="Recognition and presentations">
+        <div><p class="section-mark">Awards</p><h2>Recognition.</h2><ul class="list"><li><strong>Grand Prize · KNU Presidential Award</strong><span>Undergraduate Academic Conference, 2024</span></li><li><strong>4th Place · Digital Innovation Agency Director’s Award</strong><span>Daegu Big Data Analysis Competition, 2024</span></li><li><strong>2nd Place Poster Presentation</strong><span>Yeongnam Mathematical Society, 2024</span></li><li><strong>Dean’s List & Academic Excellence Scholarships</strong><span>Kyungpook National University, 2020–2025</span></li></ul></div>
+        <div><p class="section-mark">Presentations</p><h2>Research shared.</h2><ul class="list"><li><strong>Network Analysis as an Indicator of Systemic Financial Risk</strong><span>Poster · Korean Society for Industrial and Applied Mathematics, 2025</span></li><li><strong>Financial Mathematical Model Based on Network Entropy</strong><span>Oral presentation · KNU Undergraduate Academic Conference, 2024</span></li><li><strong>Estimation Model of House Pricing Based on Quantile Machine Learning</strong><span>Poster · Korean Mathematical Society, 2024</span></li><li><strong>Analysis of Normalized RGB on Rice Plant</strong><span>Poster · Yeongnam Mathematical Society, 2024</span></li></ul></div>
+      </section>
+      <section class="skillset" aria-labelledby="skills-title"><p class="section-mark">Tools & languages</p><h2 id="skills-title">Technical toolkit.</h2><div class="pills"><span class="pill">Python</span><span class="pill">R</span><span class="pill">SQL</span><span class="pill">English · IELTS 7.0</span><span class="pill">Japanese · JLPT N2</span><span class="pill">Korean · Native</span></div></section>
+      <section id="contact" class="contact" aria-labelledby="contact-title"><p class="section-mark">Contact</p><h2 id="contact-title">Let’s connect.</h2><p>For research, data, or quantitative-analysis opportunities, please get in touch.</p><a class="email" href="mailto:J.Shin11@lse.ac.uk">J.Shin11@lse.ac.uk</a></section>
+    </main>
+    <footer class="shell">© 2026 Jungmin Shin. Built around research, evidence, and curiosity.</footer>
+  </body>
+</html>
